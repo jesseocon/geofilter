@@ -12,8 +12,10 @@ class UserAccountsController < ApplicationController
   def create
     @user_account = UserAccount.new()
     if @user_account.submit(params[:user_account])
-      redirect_to user_account_path(@user_account.user)
+      flash[:success] = 'Your account has been created!'
+      redirect_to login_path
     else
+      flash[:error] = 'Your account could not be created!'
       render :new
     end
   end

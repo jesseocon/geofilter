@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4 top-spacer">
+	  <h3>Sign In</h3>
+      <%= form_tag sessions_path, class: 'form-vertical', id: 'sign-up' do %>
+          <%= render 'shared/flash_messages' %>
+		  <%= label_tag 'Email' %>
+          <%= text_field_tag :email, "", placeholder: 'Email', class: 'input-block-level input-medium' %>
+		  
+		  <%= label_tag 'Password' %>
+          <%= password_field_tag :password, "", placeholder: 'Password', class: 'input-block-level input-medium' %>
+          <button class="btn btn-primary" id="sign-in">Sign in!</button>
+          <div class="field" id="remember-me">
+              <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+              <%= label_tag :remember_me %>
+              
+          </div>
+          <div class="actions"></div>
+      <% end %>
+  </div><!-- end span4 offset4 -->
+</div><!-- end row-->

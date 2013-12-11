@@ -1,0 +1,61 @@
+@import "bootstrap";
+
+body {
+        padding-top:90px;
+}
+h1 {
+        text-align:center;
+        margin-bottom:15px;
+}
+
+h5 span {
+        font-size:.9em;
+        color: gray;
+}
+a {
+        decoration:none;
+        color:black;
+}
+
+.rest-name {
+				font-size:1.3em;
+				font-weight:900;
+}
+
+.im img {
+	width:200px;
+}
+
+.im {
+	height: 300px;
+}
+
+.col-md-6 input[type='text'] {
+	width: 100%;
+}
+.starter {
+	margin-top:20px;
+}
+
+input, label, textarea { 
+	display:block;
+}
+
+textarea {
+	height:100px;
+	resize:none;
+}
+
+input[type="submit"] {
+	margin-top: 5px;
+	margin-bottom:5px;
+}
+
+button#sign-in {
+	margin-top:10px;
+}
+
+.clickable {
+	cursor:pointer;
+}
+

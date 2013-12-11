@@ -1,1 +1,21 @@
-<%= render @restaurants %>
+<div class='row'>
+	<div class='col-md-6'>
+		<%= form_tag url: restaurants_path do %>
+		    <%= label_tag 'Your Location' %>
+			<% if current_user %>
+				<span id='home-icon' class="glyphicon glyphicon-home clickable" data-home-address="<%= current_user.locations.first.address %>"></span>
+			<% end %>
+			<%= text_field_tag 'search', params[:search], placeholder: 'Enter an address or City, i.e. Venice, CA or click on the home button', id: 'search-input' %>
+			
+			<%= label_tag 'Max Distance' %>
+			<%= number_field_tag 'distance', params[:distance] %>
+			
+			<div spacer></div>
+			<%= submit_tag 'Search', name: nil, class: 'btn btn-primary btn-sm' %>
+		<% end %>
+	</div>
+</div>
+<div class='row starter'>
+
+<%= render @restaurants %>	
+</div>

@@ -1,1 +1,6 @@
-<%= restaurant.name %> | <%= restaurant.description %>
+<div class='col-md-3 im'>
+	<%= image_tag('http://www.ronengoldman.com/wp-content/uploads/p4/placeholders/lightbox-placeholder-1354279707.jpg') %>
+	<p class='rest-name'><%= restaurant.name %></p>
+	<p><%= restaurant.description %></p>
+	<p><%= restaurant.locations.first.address %></p>
+</div>
