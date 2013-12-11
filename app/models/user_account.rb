@@ -1,7 +1,7 @@
 class UserAccount < Account
   
   attr_accessor :user, :location
-  delegate :first_name, :last_name, to: :user
+  delegate :first_name, :last_name, :password, :password_confirmation, :email, to: :user
   
   def initialize(attributes ={})
     attributes.each do |name, value|
@@ -14,7 +14,7 @@ class UserAccount < Account
   
   
   def submit(params)
-    @user.attributes = params.slice(:first_name, :last_name)
+    @user.attributes = params.slice(:first_name, :last_name, :email, :password, :password_confirmation)
     @location.attributes = params.slice(:address)
     if self.valid?
       @user.save!
