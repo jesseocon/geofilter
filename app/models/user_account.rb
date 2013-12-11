@@ -12,7 +12,10 @@ class UserAccount < Account
     @location ||= Location.new(locatable_type: 'User')
   end
   
-  def submit
+  
+  def submit(params)
+    @user.attributes = params.slice(:first_name, :last_name)
+    @location.attributes = params.slice(:address)
     if self.valid?
       @user.save!
       @location.locatable_id = @user.id

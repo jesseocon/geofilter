@@ -7,4 +7,8 @@ class Account
   delegate :address, :longitude, :latitude, :locatable_id, :locatable_type, to: :location
   
   
+  def persisted?
+    false
+  end
+  
 end

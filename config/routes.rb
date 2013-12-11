@@ -2,6 +2,8 @@ Cavinterview::Application.routes.draw do
   
   resources :restaurants
   resources :addresses
+  resources :restaurant_accounts
+  resources :user_accounts
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

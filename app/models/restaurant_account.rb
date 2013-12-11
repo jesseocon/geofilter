@@ -1,4 +1,4 @@
-class RestaurantSignup < Signup
+class RestaurantAccount < Account
   
   attr_accessor :restaurant, :location
   delegate :name, to: :restaurant
@@ -13,7 +13,9 @@ class RestaurantSignup < Signup
     @location   ||= Location.new(locatable_type: 'Restaurant')
   end
   
-  def submit
+  def submit(params)
+    @restaurant.attributes = params.slice(:name)
+    @location.attributes = params.slice(:address)
     if self.valid?
       @restaurant.save!
       @location.locatable_id = @restaurant.id
