@@ -5,7 +5,7 @@
 			<% if current_user %>
 				<span id='home-icon' class="glyphicon glyphicon-home clickable" data-home-address="<%= current_user.locations.first.address %>"></span>
 			<% end %>
-			<%= text_field_tag 'search', params[:search], placeholder: 'Enter an address or City, i.e. Venice, CA or click on the home button', id: 'search-input' %>
+			<%= text_field_tag 'search', params[:search], placeholder: 'Enter an address or City, i.e. Venice, CA', id: 'search-input' %>
 			
 			<%= label_tag 'Max Distance' %>
 			<%= number_field_tag 'distance', params[:distance] %>
