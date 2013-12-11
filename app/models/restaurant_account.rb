@@ -1,7 +1,7 @@
 class RestaurantAccount < Account
   
   attr_accessor :restaurant, :location
-  delegate :name, to: :restaurant
+  delegate :name, :description, to: :restaurant
   
    
   def initialize(attributes ={})
@@ -14,7 +14,7 @@ class RestaurantAccount < Account
   end
   
   def submit(params)
-    @restaurant.attributes = params.slice(:name)
+    @restaurant.attributes = params.slice(:name, :description)
     @location.attributes = params.slice(:address)
     if self.valid?
       @restaurant.save!
